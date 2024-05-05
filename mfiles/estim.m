@@ -210,7 +210,7 @@ mat_B   = @(Re) mean(Re.*permute(domega,[3,2,1]),3)'; % (4x1xG) x (1x14xG) = (4 
 % Construct matrix A = sum (P x inv(S) x P') = sum (IF x IF')
 PSiP    = AtimesB_C(permute(  AtimesB_C(mat_P, mat_Si)  ,[2,1,3]), mat_P);
 mat_A   = mean(PSiP,3);
-%mat_A    = IF_beta'*IF_beta/G;
+%mat_A    = Rwe'*Rwe/G;
 
 if isnumeric(est_fst) == 0
     IF_beta = Rwe + IF_gamma_rs*mat_B(Re); % Correction of 1st stage estim

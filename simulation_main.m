@@ -15,11 +15,11 @@ bar_Y2_j    = [30;15];
 bar_Y       = cat(3,[bar_Y1_i, bar_Y1_j],[bar_Y2_i, bar_Y2_j]);
 
 % Number of replications
-B           = 5;
+B           = 10000;
 
 % List of group sizes
 %Glist       = [2500, 5000, 10000, 20000]
-Glist       = [200,400,800,1000,2000,5000]
+Glist       = [200,400,800,1000,2000,5000,10000]
 
 % Monotone pair
 z_a = 2;   
@@ -34,10 +34,12 @@ tic()
 toc()
 
 % Save simulation info.
-save('data\res_0504.mat')
+save('data\res_0505.mat')
 
-%% Print Simulation Result
-print_table("res_0504", "Tables_0504_2.txt")
+% Print Simulation Result
+print_table("res_0505", "Tables_0505.txt")
 
+% Tables_0504_rev: modify A as IF*IF'/G
+% Tables_0505: B=10000, Glist=[200,400,800,1000,2000,5000,10000]
 %% Print Figure
 print_figure_types
